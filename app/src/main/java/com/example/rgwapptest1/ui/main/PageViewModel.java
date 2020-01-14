@@ -31,6 +31,7 @@ public class PageViewModel extends ViewModel {
     public MutableLiveData<Integer> getLiveData() {
         if (liveData == null) {
             liveData = new MutableLiveData<Integer>();
+            liveData.setValue(0);
         }
         return liveData;
     }

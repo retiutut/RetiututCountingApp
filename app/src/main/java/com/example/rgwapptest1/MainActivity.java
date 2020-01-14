@@ -39,33 +39,43 @@ public class MainActivity extends AppCompatActivity {
         mPager.setAdapter(sectionsPagerAdapter);
         tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(mPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        FloatingActionButton fab3 = findViewById(R.id.fab3);
+        FloatingActionButton plus = findViewById(R.id.plus);
+        FloatingActionButton minus = findViewById(R.id.minus);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        /*
+        plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+        */
 
-        fab3.setOnClickListener(new View.OnClickListener() {
+        minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //System.out.println("++++++++++++" + manager.getFragments());
-
-                /* THIS IS PRECISELY HOW TO GET THE CURRENTLY VIEWABLE FRAGMENT */
+                /* THIS IS HOW TO GET THE CURRENTLY VIEWABLE FRAGMENT */
                 PlaceholderFragment fragment = (PlaceholderFragment)
                         manager.findFragmentByTag(
                                 "android:switcher:" + R.id.view_pager + ":" + mPager.getCurrentItem()
                         );
-                //System.out.println(fragment.getLiveData());
-                Integer i = fragment.getLiveData() == null ? 1 : fragment.getLiveData() + 1;
+                Integer i = fragment.getLiveData() == null ? 1 : fragment.getLiveData() - 1;
                 fragment.setLiveData(i);
-                //System.out.println("++++++++++++" + fragment.getTag());
             }
         });
 
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* THIS IS HOW TO GET THE CURRENTLY VIEWABLE FRAGMENT */
+                PlaceholderFragment fragment = (PlaceholderFragment)
+                        manager.findFragmentByTag(
+                                "android:switcher:" + R.id.view_pager + ":" + mPager.getCurrentItem()
+                        );
+                Integer i = fragment.getLiveData() == null ? 1 : fragment.getLiveData() + 1;
+                fragment.setLiveData(i);
+            }
+        });
     }
 }
