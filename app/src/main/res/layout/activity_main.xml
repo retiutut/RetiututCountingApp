@@ -11,11 +11,12 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="bottom|center_horizontal"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
             android:text="@string/app_name"
@@ -23,9 +24,7 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" />
+            style="@style/test1" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
@@ -41,7 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/iconfinder_icon_plus_round_211877" />
+        app:fabCustomSize="@android:dimen/notification_large_icon_width"
+        app:fabSize="auto"
+        app:maxImageSize="@android:dimen/notification_large_icon_width"
+        app:srcCompat="@drawable/iconfinder_icon_plus_round_white_211877" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/minus"
@@ -51,5 +53,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
         android:focusable="true"
-        app:srcCompat="@drawable/iconfinder_icon_minus_round_211863" />
+        app:fabCustomSize="@android:dimen/notification_large_icon_width"
+        app:maxImageSize="@android:dimen/notification_large_icon_width"
+        app:srcCompat="@drawable/iconfinder_icon_minus_round_white_211863" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

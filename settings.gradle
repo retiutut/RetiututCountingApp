@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='rgwAppTest1'
+rootProject.name='RetiututCountingApp'
